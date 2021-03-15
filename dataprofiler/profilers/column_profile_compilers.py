@@ -42,7 +42,7 @@ class BaseColumnProfileCompiler(with_metaclass(abc.ABCMeta, object)):
 
         # convert all the values to string
         df_series = df_series.apply(str)
-        
+
         selected_col_profiles = None
         if options and isinstance(options, StructuredOptions):
             selected_col_profiles = options.enabled_columns

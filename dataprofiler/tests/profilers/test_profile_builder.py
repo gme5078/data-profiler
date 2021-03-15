@@ -365,6 +365,15 @@ class TestStructuredDataProfileClass(unittest.TestCase):
         self.assertEqual(0.5, merged_profile._sampling_ratio)
         self.assertEqual(11, merged_profile._min_true_samples)
 
+    def test_add_profilers_2(self):
+        data = pd.DataFrame([1, 2, 3, 4])
+        options = dp.ProfilerOptions()
+        options.set({'int.max.is_enabled': False})
+        profile1 = dp.Profiler(data, profiler_options=options)
+        profile2 = dp.Profiler(data)
+        profile3 = profile1 + profile2
+
+
     def test_integrated_merge_diff_options(self):
         options = dp.ProfilerOptions()
         options.set({'data_labeler.is_enabled': False})

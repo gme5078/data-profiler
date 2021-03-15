@@ -14,6 +14,7 @@ from . import utils
 from .. import test_utils
 
 from dataprofiler.profilers import DateTimeColumn
+from dataprofiler.profilers.profiler_options import DateTimeOptions
 
 
 # This is taken from: https://github.com/rlworkgroup/dowel/pull/36/files
@@ -342,3 +343,48 @@ class TestDateTimeColumnProfiler(unittest.TestCase):
                          "Unsupported operand type(s) for +: "
                          "'DateTimeColumn' and '{}'"
                          .format(profile2.__class__.__name__))
+        
+        
+    def test_profile_merge_with_different_options(self):
+        # Creating first profiler with default options
+        options = DateTimeOptions()
+        options.is_enabled = False
+
+        data = [
+            "2013-03-5 15:43:30",
+            "2013-03-6T15:43:30",
+            "2013-03-6T15:43:30.123456Z",
+            "03/10/2013 15:43",
+            "3/8/2013 15:43",
+            "%2013036T154330",
+            "05:46:30.258509",
+        ]
+        df = pd.Series(data).apply(str)
+        profiler1 = DateTimeColumn("DateTime", options=options)
+        profiler1.update(df)
+        
+        """
+        profiler1.match_count = 0
+
+        # Creating second profiler with separate options
+        options = DateTimeOptions()
+        options.is_enabled = True
+        data2 = [
+            2.5, 12.5, '2013-03-10 15:23:20', 5, '03/10/2013 15:23',
+            'Mar 12, 2013'
+        ]
+        df2 = pd.Series(data2).apply(str)
+        profiler2 = DateTimeColumn("DateTime", options=options)
+        profiler2.update(df2)
+
+        # Asserting warning when adding 2 profilers with different options
+        with self.assertWarnsRegex(RuntimeWarning,
+                                   "is_enabled is disabled because it is not "
+                                   "enabled in both profiles."):
+            profiler3 = profiler1 + profiler2
+
+        # Assert that these features are not calculated
+        self.assertIsNone(profiler3.max)
+        self.assertIsNone(profiler3.min)
+        self.assertEqual(0, profiler3.precision)
+        """
