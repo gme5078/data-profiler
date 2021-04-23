@@ -42,7 +42,7 @@ Install from pypi:
 
     pip install DataProfiler
 
-If you have suggestions or find a bug, [please open an `issue`_].
+If you have suggestions or find a bug, please open an `issue`_.
 
 Visit the :ref:`API<API>` to explore Data Profiler's terminology.
 
