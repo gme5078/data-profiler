@@ -74,7 +74,7 @@ The format for a profile is below:
             "data_label": string,
             "categorical": bool,
             "order": string,
-        "samples": list(str),
+            "samples": list(str),
             "statistics": {
                 "sample_size": int,
                 "null_count": int,
@@ -90,7 +90,7 @@ The format for a profile is below:
                 "stddev": float,
                 "histogram": { 
                     "bin_counts": list(int),
-            "bin_edges": list(float),
+                    "bin_edges": list(float),
                 },
                 "quantiles": {
                     int: float
@@ -103,16 +103,16 @@ The format for a profile is below:
                 "unique_ratio": float,
                 "precision": {
                 'min': int,
-            'max': int,
-            'mean': float,
-            'var': float,
-            'std': float,
-            'sample_size': int,
-            'margin_of_error': float,
-            'confidence_level': float		
+                'max': int,
+                'mean': float,
+                'var': float,
+                'std': float,
+                'sample_size': int,
+                'margin_of_error': float,
+                'confidence_level': float		
             },
-                "times": dict(float),
-                "format": string
+            "times": dict(float),
+            "format": string
             }
         }
     }
@@ -319,6 +319,7 @@ In addition, it utilizes only the first 10,000 rows.
    :hidden:
    :caption: Getting Started:
 
+   Intro<self>
    install.rst
    profiler.rst
    data_readers.rst

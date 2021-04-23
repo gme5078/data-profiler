@@ -113,7 +113,8 @@
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption"><span class="caption-text">Getting Started:</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profiler.html">Profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_readers.html">Data Readers</a></li>
@@ -251,7 +252,7 @@
         <span class="s2">"data_label"</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span>
         <span class="s2">"categorical"</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
         <span class="s2">"order"</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span>
-    <span class="s2">"samples"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span>
+        <span class="s2">"samples"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">str</span><span class="p">),</span>
         <span class="s2">"statistics"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"sample_size"</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
             <span class="s2">"null_count"</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -267,7 +268,7 @@
             <span class="s2">"stddev"</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
             <span class="s2">"histogram"</span><span class="p">:</span> <span class="p">{</span>
                 <span class="s2">"bin_counts"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
-        <span class="s2">"bin_edges"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
+                <span class="s2">"bin_edges"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
             <span class="p">},</span>
             <span class="s2">"quantiles"</span><span class="p">:</span> <span class="p">{</span>
                 <span class="nb">int</span><span class="p">:</span> <span class="nb">float</span>
@@ -280,16 +281,16 @@
             <span class="s2">"unique_ratio"</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
             <span class="s2">"precision"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">'min'</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
-        <span class="s1">'max'</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
-        <span class="s1">'mean'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-        <span class="s1">'var'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-        <span class="s1">'std'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-        <span class="s1">'sample_size'</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
-        <span class="s1">'margin_of_error'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
-        <span class="s1">'confidence_level'</span><span class="p">:</span> <span class="nb">float</span>
+            <span class="s1">'max'</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="s1">'mean'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="s1">'var'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="s1">'std'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="s1">'sample_size'</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="s1">'margin_of_error'</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="s1">'confidence_level'</span><span class="p">:</span> <span class="nb">float</span>
         <span class="p">},</span>
-            <span class="s2">"times"</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
-            <span class="s2">"format"</span><span class="p">:</span> <span class="n">string</span>
+        <span class="s2">"times"</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="n">string</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
