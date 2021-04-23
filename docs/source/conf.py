@@ -14,6 +14,7 @@ import furo
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../../dataprofiler'))
+sys.path.insert(0, os.path.abspath('../../../examples'))
 
 
 # -- Project information -----------------------------------------------------
@@ -37,7 +38,8 @@ extensions = [
     'furo', 
     'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',     
-    'nbsphinx'
+    'nbsphinx',
+    'nbsphinx_link',
 ]
 
 # Don't execute the notebook cells when generating the documentation
@@ -45,9 +47,7 @@ extensions = [
 # See: https://nbsphinx.readthedocs.io/en/0.2.15/never-execute.html#Explicitly-Dis-/
 nbsphinx_execute = "never"
 nbsphinx_prolog = """
-|
 `View this notebook on GitHub <https://github.com/capitalone/rubicon/tree/main/notebooks/{{ env.doc2path(env.docname, base=None) }}>`_
-----
 """
 
 autoclass_content = 'both'
@@ -78,10 +78,10 @@ html_theme = "furo"
 html_title = f"<div class='hidden'>Data Profiler</div> <div class='version'> v{version[:5]}</div>"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
-html_favicon = "_static/images/truedplogo.png"
+html_favicon = "_static/images/DataProfilerLogoLightTheme.png"
 html_theme_options = {
-    "light_logo": "images/truedplogolong.png",
-    "dark_logo": "images/truedplogolong.png",
+    "light_logo": "images/DataProfilerLogoLightThemeLong.png",
+    "dark_logo": "images/DataProfilerDarkLogoLong.png",
 }
 
 

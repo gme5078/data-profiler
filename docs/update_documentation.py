@@ -3,11 +3,16 @@ import sys
 import subprocess
 import os
 
+sys.path.insert(0, os.path.abspath('../../dataprofiler'))
+from dataprofiler import __version__ as version  # noqa F401
+
 # Make the rst files from the current repo
-subprocess.run(["sphinx-apidoc", "-f", "-e", "-o", "../docs/source", "../dataprofiler", "../dataprofiler/tests/"])
+subprocess.run(["sphinx-apidoc", "--templatedir=./source/_templates/", "-f",
+                "-e", "-o", "../docs/source", "../dataprofiler",
+                "../dataprofiler/tests/"])
 
 update_index_rst = True
-version = str(sys.argv[1])
+
 if not version:
     Exception("There must be a valid version argument.")
 
@@ -16,7 +21,7 @@ source_index = open("source/index.rst", "r+")
 source_index_lines = source_index.readlines()
 source_index.close()
 for sentence in source_index_lines:
-    if sentence.startswith("   `" + version):
+    if sentence.startswith("* `" + version):
         update_index_rst = False
 
 # Update the index file if needed
@@ -52,10 +57,3 @@ index_file = open("../index.html", "w")
 redirect_link = "<meta http-equiv=\"refresh\" content=\"0; url=./docs/" + version + "/html/index.html\" />"
 index_file.write(redirect_link)
 index_file.close()
-
-# Removes unneeded files
-#files = os.listdir("source")
-#for file in files:
-#    if file != "index.rst" and file != "conf.py":
-#        os.remove("./source/"+file)
-
